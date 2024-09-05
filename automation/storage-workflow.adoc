@@ -1,0 +1,42 @@
+---
+permalink: automation/storage-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: 工作流是指完成特定管理任务或目标所需的一个或多个步骤的序列。 
+---
+= 存储发现
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+可以在配置映射中配置发现间隔。计划的发现每60分钟运行一次。此处提供的API用于对添加到本地范围的给定存储后端运行按需发现。
+
+使用以下API运行发现：
+
+[listing]
+----
+POST
+/virtualization/api/v1/vcenters/{vcguid}/storage-backends/{id}/discovery-jobs
+----
+
+NOTE: 请参见板载存储后端(SVM或集群)工作流并从存储后端API响应中获取ID。
+
+只有本地范围的存储后端才支持从此API端点进行发现、而全局范围的存储后端则不支持从此API端点进行发现。如果存储后端类型为cluster、则会隐式对子SVM运行发现。如果存储后端类型为SVM、则仅会对选定SVM运行发现。
+
+示例：
+
+在ID指定的存储后端运行发现
+
+[listing]
+----
+POST
+/api/v1/vcenters/3fa85f64-5717-4562-b3fc-2c963f66afa6/storage-backends/74e85f64-5717-4562-b3fc-2c963f669dde/discovery-jobs
+----
+您需要为此API传递x-auth.您可以从Swagger中的身份验证下添加的新API生成此x-auth.
+
+[listing]
+----
+/virtualization/api/v1/auth/vcenter-login
+----

@@ -1,0 +1,29 @@
+---
+permalink: automation/manage-network-workflows.html 
+sidebar: sidebar 
+keywords: REST API categories 
+summary: 管理网络访问 
+---
+= 管理网络访问
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用以下API添加IP地址以列入白名单：
+
+[listing]
+----
+patch /api/v1/vcenters/{vcguid}/settings/ip-whitelist
+
+{
+    value: string
+}
+
+GET /api/v1/vcenters/{vcguid}/settings/ip-whitelist
+
+{
+    value: string
+}
+----

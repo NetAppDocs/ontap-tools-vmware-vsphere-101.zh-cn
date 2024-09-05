@@ -1,0 +1,101 @@
+---
+permalink: automation/expand-shrink-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: 工作流是指完成特定管理任务或目标所需的一个或多个步骤的序列。 
+---
+= 扩展或缩减VVOV数据存储库的存储
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+可以通过API来增加或减少可用存储。
+
+* 步骤 *
+
+使用以下API扩展或缩减此卷数据存储库：
+
+[listing]
+----
+PATCH
+​/virtualization​/api​/v1​/vcenters​/{vcguid}​/vvols​/datastores​/{moref}​/volumes
+----
+示例
+
+* 修改用于添加新卷的vols数据存储库
+
+
+[listing]
+----
+  PATCH virtualization/api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-24/volumes
+
+    Request Body
+   {
+    "operation": "grow",
+    "volumes": [{
+        "is_existing": false,
+        "name": "exp3",
+        "size_in_mb": 51200,
+        "space_efficiency": "thin",
+        "aggregate": {
+            "id": "1466e4bf-c6d6-411a-91d5-c4f56210e1ab"
+        },
+        "storage_backend": {
+            "storage_id": "13d86e4f-1fb1-11ee-9509-005056a75778"
+        },
+        "qos": {
+            "max_iops": 5000
+        }
+    }]
+}
+----
+* 修改用于添加现有卷的vols数据存储库
+
+
+[listing]
+----
+  PATCH virtualization/api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-24/volumes
+
+    Request Body
+    {
+      "operation": "grow",
+      "volumes": [{
+        "is_existing": true,
+        "id": "vfded9ad-6bsd-4c9e-b44g-691250bfe2sd"
+      }]
+    }
+----
+* 修改用于从存储中删除卷和卷的虚拟卷数据存储库
+
+
+[listing]
+----
+  PATCH virtualization/api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-24/volumes?delete_volumes=true
+
+    Request Body
+    {
+      "operation": "shrink",
+      "volumes": [{
+        "is_existing": true,
+        "id": "vfded9ad-6bsd-4c9e-b44g-691250bfe2sd"
+      }]
+    }
+----
+* 修改用于删除卷的虚拟卷数据存储库、不要从存储中删除卷
+
+
+[listing]
+----
+  PATCH virtualization/api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-24/volumes?delete_volumes=false
+
+    Request Body
+    {
+      "operation": "shrink",
+      "volumes": [{
+        "is_existing": true,
+        "id": "vfded9ad-6bsd-4c9e-b44g-691250bfe2sd"
+      }]
+    }
+----

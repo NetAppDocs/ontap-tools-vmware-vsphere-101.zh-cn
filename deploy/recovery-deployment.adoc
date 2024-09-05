@@ -1,0 +1,55 @@
+---
+permalink: deploy/recovery-deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: 如果您丢失了适用于VMware vSphere的ONTAP工具设置、但ONTAP仍在运行、则可以使用ONTAP恢复适用于VMware vSphere的ONTAP工具设置。如果设置丢失、请正常关闭设置。 
+---
+= 恢复适用于VMware vSphere的ONTAP工具设置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果丢失适用于VMware vSphere的ONTAP工具设置、您可以使用ONTAP卷数据中提供的数据恢复适用于VMware vSphere的ONTAP工具设置。如果设置丢失、请正常关闭设置。
+
+
+NOTE: 如果vCenter Server或ONTAP数据管理软件出现问题、则无法恢复适用于VMware vSphere的ONTAP工具设置。
+
+* 步骤 *
+
+. 登录到vSphere服务器。
+. 导航到要部署OVA的资源池、节点集群或主机。
+. 右键单击所需位置并选择*Deploy OVF temple*。
+. 您可以输入_.ova_文件的URL，也可以浏览到保存_.ova_文件的文件夹，然后选择*Next*。
++
+
+NOTE: 您应使用与安装恢复设置相同的OVA内部版本。
+
+. 选择虚拟机的名称和文件夹，然后选择*Next*。
+. 选择主机并选择*Next*。
+. 查看模板摘要并选择*下一步*。
+. 阅读并接受许可协议，然后选择*Next*。
+. 在*配置*窗口中，选择*恢复*选项。
+. 在*选择存储*窗口中，为配置和磁盘文件选择存储。
+. 在*选择网络*窗口中，为每个源网络选择一个目标网络。
++
+
+NOTE: 您需要保留负载平衡器IP地址和Kubbernetes API服务器IP地址。您可以更改节点IP地址、也可以保留相同的IP地址。
+
+. 选择*自定义模板*>*系统配置*窗口。输入以下详细信息：
++
+.. 应用程序用户名和密码：此用户名和密码用于在vCenter Server中注册VASA Provider和SRA。此密码可能与初始部署期间提供的用户名和密码不同。
+.. 默认情况下，“*启用ASUP*”复选框处于选中状态。
+
+
+
+
+只能在部署期间启用或禁用AutoSupport。……在*ASUP代理URL*字段中，提供此URL以避免防火墙阻止AutoSupport数据传输。……管理员用户名和管理员密码：用于登录到ONTAP工具管理器的密码。此密码可能与初始部署期间提供的用户名和密码不同。……在*NTP服务器*字段中输入NTP服务器信息。……维护用户密码：用于授予对维护控制台选项的访问权限。。在*Customize temple*>*Deployment Configuration*窗口中，输入部署期间提供的详细信息。除了数据LIF值之外、本节中的所有值都应与初始部署期间提供的值相同。
+
+
+NOTE: 存储SVM名称不应更改、因为它是存储恢复数据的位置。此适用场景还直接添加了SVM用户帐户。。对于HA部署恢复、请提供以下详细信息：..内容库详细信息。vCenter配置详细信息。。在*Customize temp*>*Node Configuration*窗口中，根据您要恢复的设置、非HA或HA设置输入详细信息。。查看*Ready to Complete*(准备完成*)窗口中的详细信息，选择*Complete*(完成*)。
+
++创建部署任务后、vSphere任务栏中将显示进度。。完成此任务后、打开虚拟机的电源。
+
++安装开始。您可以在VM的Web控制台中跟踪安装进度。在安装过程中、系统会验证节点配置。系统会验证在OVF表单的Customize模板下的不同部分下提供的输入。如果出现任何差异、则会显示一个对话框、提示您采取更正操作。。在对话框提示符中进行必要的更改。使用Tab键在面板中导航，输入您的值*OK*或*Cancel*。。选择*OK*或*Cancel*后，提供的值将再次验证。使用适用于VMware的ONTAP工具、您可以尝试三次以更正任何无效值。如果在三次尝试后仍无法更正问题、则产品安装将停止、建议您尝试在全新虚拟机上进行安装。。成功安装后、Web控制台将显示适用于VMware vSphere的ONTAP工具的状态。成功安装后、您应按照页面中的准则手动编辑硬件要求 link:../deploy/sizing-requirements.html["部署适用于VMware vSphere的ONTAP工具的前提条件"] 。

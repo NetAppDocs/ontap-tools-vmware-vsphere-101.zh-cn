@@ -1,0 +1,69 @@
+---
+permalink: configure/add-vcenter.html 
+sidebar: sidebar 
+keywords:  
+summary: 'vCenter Server实例是中央管理平台、可用于控制主机、虚拟机(VM)和存储后端。' 
+---
+= 添加和管理vCenter Server实例
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+vCenter Server提供了一个中央管理平台、可用于控制主机、虚拟机(VM)和存储后端。
+
+
+
+== 添加vCenter Server实例
+
+* 关于此任务 *
+
+您可以使用一个适用于VMware vSphere的ONTAP工具实例添加和管理多个vCenter Server实例。
+
+* 步骤 *
+
+. 从Web浏览器启动ONTAP工具管理器： `\https://loadBalanceIP:8443/virtualization/ui/`
+. 使用您在部署期间提供的适用于VMware vSphere的ONTAP工具管理员凭据登录。
+. 从边栏中选择*vcCenter*。
+. 选择*添加*到板载vCenter Server实例、并提供vCenter IP地址/主机名、用户名、密码和端口详细信息。
+
+
+将vCenter Server实例添加到ONTAP工具时、系统会自动执行以下操作：
+
+* 已注册vCenter Client插件
+* 插件和API的自定义权限将推送到vCenter Server实例
+* 创建自定义角色以管理用户。
+
+
+
+
+== 向vCenter Server实例注册适用于VMware vSphere插件的ONTAP工具
+
+添加vCenter Server实例时、适用于VMware vSphere插件的ONTAP工具会自动作为远程插件注册到vCenter Server。此插件可通过vSphere用户界面快捷方式查看。
+
+此插件会使用密钥_com.netapp.otv_注册到vCenter Server实例中、并可在vCenter Server实例的扩展管理器中查看。
+
+
+
+== 取消注册适用于VMware vSphere插件的ONTAP工具
+
+您可以按照以下步骤从vCenter Server实例中取消注册适用于VMware vSphere插件的ONTAP工具。
+
+* 步骤 *
+
+. 从Web浏览器启动ONTAP工具管理器： `\https://loadBalanceIP:8443/virtualization/ui/`
+. 使用您在部署期间提供的适用于VMware vSphere的ONTAP工具管理员凭据登录。
+. 从侧栏中选择vCenter。
+. 单击要删除的vCenter旁边的垂直省略号、然后选择*删除*选项。
++
+
+NOTE: 如果vCenter Server实例已连接存储映射、则无法将其删除。您需要先删除此映射、然后才能删除vCenter Server实例。
+
+
+
+在ONTAP工具中删除vCenter Server实例时、系统会自动执行以下操作：
+
+* 已取消注册插件。
+* 插件权限和插件角色将被删除。
+

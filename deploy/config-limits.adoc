@@ -1,0 +1,78 @@
+---
+permalink: deploy/config-limits.html 
+sidebar: sidebar 
+keywords: ONTAP tools,Storage Replication Adapter 
+summary: 部署适用于VMware vSphere的ONTAP工具的配置限制 
+---
+= 部署适用于VMware vSphere的ONTAP工具的配置限制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用下表作为指南来配置适用于VMware vSphere的ONTAP工具。
+
+|===
+
+
+| * 部署 * | * 类型 * | *数量* | *主机数* | *协议类型* 
+
+
+| 轻松部署 | 小型(S) | ~1、K | 32 | NFS、iSCSI 
+
+
+| 轻松部署 | 中(M) | ~24K | 64 | NFS、iSCSI 
+
+
+| 高可用性 | 小型(S) | ~24K | 64 | NFS、iSCSI 
+
+
+| 高可用性 | 中(M) | ~50 k | 128 | NFS、iSCSI 
+
+
+| 高可用性 | 大(L) | ~100k | 256 [注意]表中的主机数显示了来自多个vCenter的主机总数。 | NFS、iSCSI 
+|===
+有关每个节点的主机系统规模估算要求的详细信息，请参见link:../deploy/sizing-requirements.html["部署适用于VMware vSphere的ONTAP工具的前提条件"]。
+
+
+
+== 适用于VMware vSphere的ONTAP工具—Storage Replication Adapter (SRA)
+
+下表显示了使用适用于VMware vSphere的ONTAP工具时每个SRM实例支持的数量。
+
+|===
+| *vCenter部署大小* | *小* | *中* 
+
+
+| 配置为使用基于阵列的复制进行保护的虚拟机总数 | 2000 | 5000 
+
+
+| 基于阵列的复制保护组总数 | 250 | 250 
+
+
+| 每个恢复计划的保护组总数 | 50 | 50 
+
+
+| 复制的数据存储库数量 | 255 | 255 
+
+
+| VM数量 | 4000 | 7000 
+|===
+下表显示了SRM的数量以及适用于VMware vSphere部署规模的相应ONTAP工具。
+
+|===
+
+
+| *SRM实例数* | * ONTAP工具部署规模* 
+
+
+| 最多4个 | 小型 
+
+
+| 4 到 8 | 中 
+
+
+| 8个以上 | 大型 
+|===
+有关详细信息，请参阅 https://docs.vmware.com/en/VMware-Live-Recovery/services/vmware-live-site-recovery/GUID-3AD7D565-8A27-450C-8493-7B53F995BB14.html["VMware Live Site Recovery的操作限制"]。

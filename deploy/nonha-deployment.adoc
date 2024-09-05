@@ -1,0 +1,99 @@
+---
+permalink: deploy/nonha-deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以在小型或中型配置中配置非HA单节点。 
+---
+= 部署非HA单节点配置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以采用小型或中型配置部署非HA单节点配置。
+
+* 小型非HA配置包含8个CPU和16 GB RAM。
+* 中型非HA配置包含12个CPU和24 GB RAM。
+
+
+* 开始之前 *
+
+确保网络路由存在。存储数据网络需要可从VM管理网络进行访问。示例：c1_spi 67-vsim-ucs154k_1679633108：：> network route create -vserver <SVM>-Destination 0.0.0.0/0 -Gateway <gateway_ip>
+
+* 步骤 *
+
+. 登录到vSphere服务器。
+. 导航到要部署OVA的资源池、集群或主机。
+. 右键单击所需位置并选择*Deploy OVF temple...*。
++
+
+NOTE: 请勿将ONTAP工具VMware vSphere虚拟机部署在其管理的vvol数据存储库上。
+
+. 您可以输入_.ova_文件的URL，也可以浏览到保存_.ova_文件的文件夹，然后选择*Next*。
+. 选择虚拟机的名称和文件夹，然后选择*Next*。
+. 选择主机并选择*Next*
+. 查看模板摘要并选择*下一步*。
+. 阅读并接受许可协议，然后选择*Next*。
+. 在*Configuration*窗口中，选择*Easy Deployment (S)*、*Easy Deployment (M)*或*Advanced Deployment (S)*或*Advanced Deployment (M)*配置。
++
+高级部署选项会使用通过ONTAP的动态存储配置程序来创建卷、而简单的部署则会使用本地存储来创建卷。
+
+. 选择需要部署OVA的数据存储库，然后选择*Next*。
+. 选择源网络和目标网络，然后选择*Next*。
+. 选择*自定义模板*>*系统配置*窗口。
++
+image:../media/ha-deployment-sys-config.png["系统配置"]输入以下详细信息：...应用程序用户名和密码：此用户名和密码用于在vCenter Server中注册VASA Provider和SRA。……默认情况下，“*启用ASUP*”复选框处于选中状态。
+
+
+
+只能在部署期间启用或禁用AutoSupport。……在*ASUP代理URL*字段中，提供此URL以避免防火墙阻止AutoSupport数据传输。……管理员用户名和管理员密码：用于登录到ONTAP工具管理器的密码。……在*NTP服务器*字段中输入NTP服务器信息。……‘M用户密码：用于授予对“未配置控制台选项”的访问权限。。在*Customize temple*>*Deployment Configuration*窗口中，输入以下详细信息：
+
++image:../media/ha-deploy-config.png["部署配置"]
+
+. 在Kubbernetes控制平台的"Virtual IP address"(虚拟IP地址)中输入可用的IP地址。您需要为Kubbernetes API服务器提供此功能。
+. 如果要使用直接添加的SVM用户帐户、请选择*启用SVM范围*选项。要使用ONTAP集群、请勿选中此复选框。
++
+
+NOTE: 启用SVM范围后、您应已使用管理IP地址启用SVM支持。
+
+. 在*协议*字段中选择NFS或iSCSI。
+. 在* ONTAP或SVM管理LIF*字段中输入ONTAP集群或SVM管理IP地址。
+. 输入ONTAP集群或SVM ONTAP或SVM数据LIF。数据LIF应属于选定协议。例如、如果选择了iSCSI协议、则应提供iSCSI数据LIF。
+. 对于Storage VM、您可以选择提供ONTAP的默认Storage VM详细信息、也可以创建新的Storage VM。如果选择了启用SVM范围界定、请勿在* Storage VM*字段中输入值、因为此字段将被忽略。
+. 输入ONTAP或SVM用户名。在高级或HA部署情况下、要创建用于存储服务数据的卷以及在节点发生故障期间从卷恢复数据、需要提供ONTAP或SVM用户名和密码。
+. 输入ONTAP或SVM密码。
+. 默认情况下、主VM处于启用状态。请勿更改此选项。
++
+.. 在*Customize temple*>*Node Configuration*窗口中，输入OVA的网络属性。
++
+
+NOTE: 此处提供的信息将在安装过程中验证其模式是否正确。如果出现差异、Web控制台上将显示一条错误消息、并提示您更正提供的任何错误信息。
+
+
+
+. 输入主机名。仅支持由大写字母(A-Z)、小写字母(a-z)、数字(0-9)和连字符(-)特殊字符组成的主机名。如果要配置双堆栈、请指定映射到IPv6地址的主机名。
+. 输入映射到主机名的IP地址(IPv4)。对于双堆栈、请提供与IPv6地址位于同一VLAN中的任何可用IPv4 IP地址。
+. 只有在需要双控制时、才在已部署的网络上输入IPv6地址。
+. 仅为IPv6指定前缀长度。
+. 在网络掩码(仅适用于IPv4)字段中指定要在已部署网络上使用的子网。
+. 指定已部署网络上的网关。
+. 指定主DNS服务器IP地址。
+. 指定辅助DNS服务器IP地址。
+. 指定解析主机名时要使用的搜索域名。
+. 仅当需要双堆栈时、才在已部署的网络上指定IPv6网关。
++
+.. 查看*Ready to Complete*(准备完成*)窗口中的详细信息，选择*Complete*(完成*)。
++
+创建部署任务后、vSphere任务栏中将显示进度。
+
+.. 完成此任务后、打开虚拟机的电源。
++
+此时将开始安装。您可以在VM的Web控制台中跟踪安装进度。在安装过程中、系统会验证节点配置。系统会验证在OVF表单的Customize模板下的不同部分下提供的输入。如果出现任何差异、则会显示一个对话框、提示您采取更正操作。
+
+.. 在对话框提示符中进行必要的更改。使用Tab键在面板中导航，输入您的值*OK*或*Cancel*。
+.. 选择*OK*后，将再次验证提供的值。使用适用于VMware的ONTAP工具、您可以尝试三次以更正任何无效值。如果在三次尝试后仍无法更正问题、则产品安装将停止、建议您尝试在全新虚拟机上进行安装。
+.. 成功安装后、Web控制台将显示适用于VMware vSphere的ONTAP工具的状态。
+
+
+

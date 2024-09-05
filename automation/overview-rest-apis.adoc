@@ -1,0 +1,19 @@
+---
+permalink: automation/overview-rest-apis.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: 介绍如何使用REST API执行多个ONTAP工具来执行VMware vSphere管理操作。REST API 通过 Swagger 网页公开。 
+---
+= REST API 概述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+REST API可用于为VMware vSphere管理操作执行多个ONTAP工具。REST API 通过 Swagger 网页公开。
+
+您可以访问Swagger网页、网址为_API以显示REST \https://loadbalancerIP:8443/_文档、并手动问题描述API调用。
+
+
+NOTE: 所有API都具有Swagger页面中提及的请求正文和示例。本节中提供的工作流和示例仅供参考。

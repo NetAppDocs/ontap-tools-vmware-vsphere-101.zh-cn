@@ -1,0 +1,68 @@
+---
+permalink: automation/mount-unmount-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: '您可以将VMware虚拟卷(vvol)数据存储库挂载到一个或多个其他主机、以便为其他主机提供存储访问权限。您可以使用API卸载卷数据存储库。' 
+---
+= 挂载并卸载一个卷数据存储库
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以将VMware虚拟卷(vvol)数据存储库挂载到一个或多个其他主机、以便为其他主机提供存储访问权限。您可以使用API卸载卷数据存储库。
+
+使用以下API挂载或卸载一个卷数据存储库。您需要为此API传递x-auth.您可以从Swagger中的身份验证下添加的新API生成此x-auth.
+
+[listing]
+----
+/virtualization/api/v1/auth/vcenter-login
+----
+[listing]
+----
+PATCH
+/virtualization/api/v1/vcenters/{vcguid}/vvols/datastores/{moref}/hosts
+----
+从vCenter获取VVOL数据存储库moref。
+
+请求正文
+
+[listing]
+----
+{
+  "operation": "mount",
+  "morefs": [
+    "host-7044"
+  ],
+}
+----
+示例：*挂载到其他主机上
+
+使用以下API在其他主机上挂载：
+
+[listing]
+----
+/api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-24/hosts
+
+     Request Body
+     {
+      "operation": "mount",
+      "morefs": ["host-13"],
+     }
+----
+* 在其他主机上卸载
+
+
+使用以下API在其他主机上卸载：
+
+[listing]
+----
+/api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-24/hosts
+
+     Request Body
+     {
+      "operation": "unmount",
+      "morefs": ["host-13"],
+     }
+----

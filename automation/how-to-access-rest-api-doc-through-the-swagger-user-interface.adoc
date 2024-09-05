@@ -1,0 +1,29 @@
+---
+permalink: automation/how-to-access-rest-api-doc-through-the-swagger-user-interface.html 
+sidebar: sidebar 
+keywords: REST API, Swagger 
+summary: 您可以通过本地ONTAP系统上的Swagger UI访问ONTAP REST API文档。 
+---
+= 通过Swagger UI访问适用于VMware vSphere的ONTAP工具API参考文档
+:allow-uri-read: 
+
+
+[role="lead"]
+您可以通过本地ONTAP系统上的Swagger UI访问ONTAP REST API文档。
+
+* 开始之前 *
+
+您应具备以下条件：
+
+* ONTAP 集群管理 LIF 的 IP 地址或主机名
+* 有权访问ONTAP REST API的帐户的用户名和密码
+
+
+.步骤
+. 在浏览器中键入URL、然后按* Enter *：_\https：//URL/docs/API_<ip_address>
+. 使用ONTAP帐户登录
++
+此时将显示 ONTAP API 文档页面，其中 API 调用会按主要资源类别组织在底部。
+
+. 作为单个 API 调用的示例，向下滚动到 * 集群 * 类别，然后单击 * 获取 /cluster* 。
+

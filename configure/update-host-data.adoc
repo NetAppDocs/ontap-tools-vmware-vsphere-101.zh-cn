@@ -1,0 +1,21 @@
+---
+permalink: configure/update-host-data.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以在ESXi主机上运行按需发现、以获取有关存储数据的最新更新。 
+---
+= 更新主机数据
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在ESXi主机上运行按需发现、以获取有关存储数据的最新更新。
+
+* 步骤 *
+
+. 在VMware vSphere Web Client主页中、单击*主机和群集*。
+. 右键单击某个主机，然后选择*Update NetApp ONTAP host data*。
+. 在*更新主机数据*弹出窗口中，选择*是*以重新开始发现所有已连接的存储系统。
+

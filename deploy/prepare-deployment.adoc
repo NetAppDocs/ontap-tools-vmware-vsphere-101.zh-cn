@@ -1,0 +1,55 @@
+---
+permalink: deploy/prepare-deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: 要使用此设备、您应在环境中部署适用于VMware vSphere的ONTAP工具并指定所需参数。 
+---
+= 准备为VMware vSphere部署ONTAP工具
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在开始部署适用于VMware vSphere的ONTAP工具之前、您应了解基本存储后端要求、应用程序要求和许可证要求。提前规划部署、并确定希望如何在您的环境中配置适用于VMware vSphere的ONTAP工具。
+
+
+
+== 准备部署
+
+以下是在继续部署之前适用于VMware vSphere的ONTAP工具的要求：
+
+. 配置和设置 vCenter Server 环境。
+. 下载_.ova_文件。
+. (可选)用于自动化用户—收集NetApp提供的Postman集合JSON文件。
+. 用于部署OVA的父vCenter Server凭据。父vCenter Server密码不应包含这些特殊字符($、'、")
+. 确保部署OVA的主机或资源池具有link:../deploy/sizing-requirements.html["部署适用于VMware vSphere的ONTAP工具的前提条件"]一节中所述的最低资源。
+. 适用于VMware vSphere的ONTAP工具要连接到的vCenter Server实例的登录凭据、用于在部署后进行注册。
+. 删除浏览器缓存。
+. 对于非HA部署、您需要三个可用IP地址—一个用于负载平衡器的可用IP地址、一个用于Kubbernetes控制平台的可用IP地址以及一个用于节点的IP地址。对于HA部署、除了这三个IP地址之外、第二个和第三个节点还需要两个IP地址。在分配之前、应将主机名映射到DNS上的可用IP地址。所有这五个IP地址都应位于为部署选择的同一个VLAN上。
+. 内容库模板一旦上传、不应在部署后删除、因为它将在重新启动期间使用。
+. 在多vCenter部署中、自定义CA证书是必需的、请将颁发此证书的域名映射到虚拟IP地址。对域名执行_nslookup_检查以检查域是否已解析为预期的IP地址。应使用负载平衡器IP地址的域名和IP地址创建证书。
+. IPv4/IPv6支持的VLAN -不支持纯IPv6。具有IPv6和IPv4地址的VLAN支持混合模式。
+. 为vCenter Server提供的用于时间同步的NTP服务器。
+. 要部署OVA的节点或VM的静态IP地址配置详细信息(必填)以及其他详细信息。
++
+.. vCenter Server主机名(部署了OVA的vCenter)
+.. vCenter Server用户名(部署了OVA的vCenter)
+.. vCenter Server密码(部署了OVA的vCenter)
+.. 资源池
+.. 数据LIF (IPv4/IPv6)
+.. 管理LIF
+.. ONTAP用户名
+.. ONTAP密码
+.. SVM name
+.. 协议
+.. Kubbernetes控制平台的虚拟IP地址。
+.. HA/non-HA下拉列表
+.. 主机名列表
+.. IP地址(字符串)
+.. 内容库名称
+.. VF模板名称
+.. IPv6网关(可选)
+
+
+

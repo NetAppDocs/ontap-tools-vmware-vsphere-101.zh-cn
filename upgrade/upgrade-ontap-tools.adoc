@@ -1,0 +1,76 @@
+---
+permalink: upgrade/upgrade-ontap-tools.html 
+sidebar: sidebar 
+keywords: upgrade 
+summary: 从适用于VMware vSphere 10.0和10.1的ONTAP工具升级到10.1后、系统将创建一个恢复卷、并将所有必要的详细信息输入到恢复卷中。 
+---
+= 升级到最新版本的 ONTAP 工具
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从适用于VMware vSphere 10.0和10.1的ONTAP工具升级到10.1后、系统将创建一个恢复卷、并将所有必要的详细信息输入到恢复卷中。如果需要恢复配置、可以使用恢复卷恢复适用于VMware vSphere的ONTAP工具设置。如果您要对适用于VMware vSphere 10.1的ONTAP工具执行修补程序级别升级、则会使用同一恢复卷并刷新详细信息。HA和非HA部署均支持升级。
+
+* 开始之前 *
+
+继续执行升级任务之前、您需要完成以下步骤：
+
+*启用诊断*
+
+. 从vCenter Server中、打开一个ONTAP工具控制台。
+. 以维护用户身份登录。
+. 输入*4*选择“Support and Diagnostics (支持和诊断)”。
+. 输入*2*选择启用远程诊断访问。
+. 输入*y*设置您选择的密码。
+. 从终端/putty使用上一步中设置的用户"DIAG"和密码登录到VM IP地址。
+
+
+*备份MongoDB*
+
+运行以下命令以创建MongoDB的备份：
+
+* kn exec -it NTV-MongoDB-0 sh - kn是kubect1 -n NTV-system的别名。
+* env | grep MongoDB_root_password—在POD中运行此命令。
+* '退出'-运行此命令以退出模块。
+* n exec NTV-MongoDB-0 --mongodump -u root -p MongoDB_root_password --archive=/tmp/mongodb-backup.gz --gzip -运行此命令以替换上述命令中设置的Mongo_root_password。
+* KN CP NTV-MongoDB-0：/tmp/MongoDB mongodb-backup.gz ./mongodb-backup.gz -运行此命令、将使用上述命令创建的MongoDB备份从Pod复制到主机。
+
+
+*创建所有卷的快照*
+
+* 运行"kn get pv"命令并保存命令的输出。
+* 使用以下方法之一逐个为所有卷创建快照：
++
+** 在命令行界面中、运行命令_volume Snapshot create -vserver <vserver_name>-volume <volume_name>-Snapshot <snapshot_name>_
+** 在ONTAP System Manager用户界面中、在搜索栏中按名称搜索卷、然后单击该名称打开该卷。转至快照并添加该卷的快照。
+
+
+
+
+*为vCenter中的VMware vSphere VM创建ONTAP工具的快照(对于HA部署、为3个VM；对于非HA部署、为1个VM)*
+
+* 在vSphere客户端用户界面中、选择虚拟机。
+* 进入快照选项卡并单击*创建快照*按钮。
+
+
+在执行升级之前、请从日志包中删除前缀为"generate—support-Bundle—job"的已完成Pod。如果正在生成支持包、请等待生成完成、然后删除此Pod。
+
+* 步骤 *
+
+. 将适用于VMware vSphere的ONTAP工具升级ISO上传到内容库。
+. 在主VM页面中，选择*Actions*>*Edit Settings*
+. 在“编辑设置”窗口的*CD/DVD驱动器*字段下，选择内容库ISO文件。
+. 选择ISO文件并单击*OK*。选择*CD/DVD驱动器*字段中的已连接复选框。image:../media/primaryvm-edit-settings.png["编辑设置"]
+. 从vCenter Server中、打开一个ONTAP工具控制台。
+. 以维护用户身份登录。
+. 输入*3*选择“System Configuration”(系统配置)菜单。
+. 输入*7*以选择升级选项。
+. 升级时、系统会自动执行以下操作：
++
+.. 证书升级
+.. 远程插件升级
+
+
+

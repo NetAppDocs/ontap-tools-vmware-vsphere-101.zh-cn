@@ -1,0 +1,64 @@
+---
+permalink: automation/create-vvol-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: 工作流是指完成特定管理任务或目标所需的一个或多个步骤的序列。 
+---
+= 创建卷数据存储库
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用新卷或现有卷创建卷数据存储库。此外、您还可以结合使用现有卷和新卷来创建FlexVol数据存储库。
+
+
+NOTE: 检查以确保根聚合未映射到SVM。
+
+在创建数据存储库之前生成JWT令牌、或者在vCenter上将"最大承载令牌寿命"设置为60万、以延长SAML令牌到期时间。
+
+您需要为此API传递x-auth.您可以从Swagger中的身份验证下添加的新API生成此x-auth.
+
+/Virtualization /api/v1/auth/vcenter登录
+
+. 使用新卷创建卷数据存储库。
+
+
+使用ONTAP REST API获取聚合ID、storage_id (SVM用户ID)。post /Virtualization /api/v1/vcCenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datases
+
+使用以下URI检查状态：
+
++
+
+[listing]
+----
+`\https://xx.xx.xx.xxx:8443/virtualization/api/jobmanager/v2/jobs/<JobID>?includeSubJobsAndTasks=true`
+----
++ NFS数据存储库的请求正文
+
+｛"name"："nfsds1"、"protocol："nfs"、"spand_type" AFF："iPS"、"moref"："domain-c8"、"volumes"：[｛"is_existing"：false、"name"："vol_nfs_pvt"、"size_IN_MB"：2048000、"space_
+
+iSCSI数据存储库的请求正文：｛"name"："iSCSI_custom"、"Protocol"："iSCSI" AFF、"spode_type"："nase"："domain-c8"、"volumes"：[｛is_existing"：false、"name"："iSCSI_custom"、"size_in"：8034、"space_使用现有卷创建卷数据存储库。
+
+使用ONTAP REST API获取聚合ID和卷ID。
+
+ POST /virtualization/api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores
+请求正文
+
+....
+ {
+"name" : "nfsds2",
+"protocol" : "nfs",
+"platform_type": "aff",
+"moref" : "domain-c8",
+"volumes" : [
+    {
+          "is_existing": true,
+          "id": "e632a632-1412-11ee-8a8c-00a09860a3ff"
+        }
+],
+"storage_backend": {
+                    "storage_id": "33a8b6b3-10cd-11ee-8a8c-00a09860a3ff"    }
+....
+｝

@@ -1,0 +1,34 @@
+---
+permalink: configure/verify-registration.html 
+sidebar: sidebar 
+keywords:  
+summary: 通过vCenter客户端UI验证已启用的SVM是否列在VASA Provider下。 
+---
+= 验证已注册的vasa提供程序
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过vCenter客户端UI和远程插件UI验证已启用的VASA Provider是否列在VASA Provider下。
+
+* 步骤 *
+
+. 要从vCenter客户端UI验证VASA Provider、请执行以下步骤：
++
+.. 导航到vCenter Server。
+.. 使用管理员凭据登录。
+.. 选择*存储提供程序*。
+.. 选择 * 配置 * 。
+.. 在存储提供程序/存储后端下、验证是否已正确列出已启用的VASA提供程序。
+
+
+. 要从远程插件UI验证VASA Provider、请执行以下步骤：
++
+.. 使用登录到vSphere Client `\https://vcenterip/ui`
+.. 在快捷方式页面中，单击插件部分下的NetApp ONTAP tools*。
+.. 您可以在概述页面和*设置*>* VASA Provider设置*页面中查看已注册的VASA Provider。
+
+
+

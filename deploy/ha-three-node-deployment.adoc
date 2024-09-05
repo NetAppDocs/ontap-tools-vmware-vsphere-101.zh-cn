@@ -1,0 +1,133 @@
+---
+permalink: deploy/ha-three-node-deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以在小型、中型或大型配置中配置HA。 
+---
+= 部署HA配置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在小型、中型或大型配置中配置HA三个节点。HA部署使用三项技术来存储服务数据。
+
+* 小型HA三个节点包含8个CPU、每个节点具有16 GB RAM。
+* 中型HA：三个节点包含12个CPU、每个节点具有24 GB RAM。
+* 大型HA三个节点包含16个CPU、每个节点具有32 GB RAM。
+
+
+* 开始之前 *
+
+此任务为您提供了有关如何在小型、中型或高配置中安装HA三个节点的说明。
+
+
+NOTE: 要部署HA三节点配置、必须创建内容库。有关详细信息、请参见。 link:../deploy/download-ontap-tools.html["下载ONTAP工具"]了解更多信息 https://blogs.vmware.com/vsphere/2020/01/creating-and-using-content-library.html["创建和使用内容库"]。
+
+确保已将OVA导入到内容库中。请随时提供内容库的名称以及您为OVA项目提供的库项目名称。
+
+
+NOTE: 在继续部署之前、请在安装ONTAP工具期间将清单上的集群分布式资源计划程序(DRS)设置为"保守"。这样可确保虚拟机在安装期间不会迁移。
+
+* 步骤 *
+
+. 要从vSphere服务器部署、请执行以下操作：
++
+.. 登录到vSphere服务器。
+.. 导航到要部署OVA的资源池或主机、右键单击要部署VM的所需位置、然后选择*部署OVF模板...*
++
+
+NOTE: 请勿将ONTAP工具VMware vSphere虚拟机部署在其管理的vvol数据存储库上。
+
+.. 您可以输入_.ova_文件的URL，也可以浏览到保存_.ova_文件的文件夹，然后选择*Next*
+
+
+. 要从内容库部署、请执行以下操作：
++
+.. 转到您的内容库、然后单击要部署的库项目。
+.. 单击*Actions*>*New VM from this Template *
+
+
+. 选择虚拟机的名称和文件夹，然后选择*Next*。
+. 选择主机并选择*Next*
+. 查看模板摘要并选择*下一步*。
+. 阅读并接受许可协议，然后选择*Next*。
+. 在*配置窗口*中，根据您的需要选择*高可用性部署(S)*、*高可用性部署(M)*或*高可用性部署(L)*配置。
+. 为配置和磁盘文件选择存储，然后选择*Next*。
+. 为每个源网络选择目标网络，然后选择*Next*。
+. 选择*自定义模板*>*系统配置*窗口。
++
+image:../media/ha-deployment-sys-config.png["系统配置"]
+
++
+输入以下详细信息：
+
++
+.. 应用程序用户名和密码：此用户名和密码用于在vCenter Server中注册VASA Provider和SRA。
+.. 默认情况下，“*启用AutoSupport”复选框处于选中状态。只能在部署期间启用或禁用AutoSupport。
+.. 在*ASUP代理URL*字段中，提供此URL以避免防火墙阻止AutoSupport数据传输。
+.. 管理员用户名和管理员密码：用于登录到ONTAP工具管理器的密码。
+.. 在*NTP服务器*字段中输入NTP服务器信息。
+.. ‘M用户密码：用于授予对“未配置控制台选项”的访问权限。
+
+
+. 在*Customize temple*>*Deployment Configuration*窗口中，输入以下详细信息：
++
+image:../media/ha-deploy-config.png["部署配置"]
+
++
+.. 在Kubbernetes控制平台的"Virtual IP address"(虚拟IP地址)中输入可用的IP地址。您需要为Kubbernetes API服务器提供此功能。
+.. 如果要使用直接添加的SVM用户帐户、请在高级部署选项中选择*启用SVM范围*选项。要使用ONTAP集群、请勿选中此复选框。
++
+
+NOTE: 启用SVM范围后、您应事先使用管理IP地址启用SVM支持。
+
+.. 在*协议*字段中选择NFS或iSCSI。
+.. 在* ONTAP或SVM管理LIF*字段中输入ONTAP集群或SVM管理IP地址。
+.. 输入ONTAP集群或SVM ONTAP或SVM数据LIF。数据LIF应属于选定协议。例如、如果选择了iSCSI协议、则应提供iSCSI数据LIF。
+.. 对于Storage VM、您可以选择提供ONTAP的默认Storage VM详细信息、也可以创建新的Storage VM。如果选择了启用SVM范围界定、请勿在* Storage VM*字段中输入值、因为此字段将被忽略。
+.. 输入ONTAP或SVM用户名。在高级或HA部署情况下、要创建用于存储服务数据的卷以及在节点发生故障期间从卷恢复数据、需要提供ONTAP或SVM用户名和密码。
+.. 输入ONTAP或SVM密码。
+.. 默认情况下、主VM处于启用状态。请勿更改此选项。
+
+
+. 在*Customize templat*>*Content Library Details*窗口中，输入*Content Library Name*和*OVF Template Name*。
+. 在*Customize temple*>*vCenter Configuration*窗口中，提供托管内容库的vCenter Server的详细信息。
+. 在*Customize temple*>*Node Configuration*窗口中，输入所有三个节点的OVA网络属性。
++
+
+NOTE: 此处提供的信息将在安装过程中验证其模式是否正确。如果出现差异、Web控制台上将显示一条错误消息、并提示您更正提供的任何错误信息。
+
++
+.. 输入主机名。仅支持由大写字母(A-Z)、小写字母(a-z)、数字(0-9)和连字符(-)特殊字符组成的主机名。如果要配置双堆栈、请指定映射到IPv6地址的主机名。
+.. 输入映射到主机名的IP地址(IPv4)。对于双堆栈、请提供与IPv6地址位于同一VLAN中的任何可用IPv4 IP地址。
+.. 只有在需要双堆栈时、才在已部署的网络上输入IPv6地址。
+.. 仅为IPv6指定前缀长度。
+.. 在网络掩码(仅适用于IPv4)字段中指定要在已部署网络上使用的子网。
+.. 指定已部署网络上的网关。
+.. 指定主DNS服务器IP地址。
+.. 指定辅助DNS服务器IP地址。
+.. 指定解析主机名时要使用的搜索域名。
+.. 仅当需要双堆栈时、才在已部署的网络上指定IPv6网关。
+
+
+. 在*Customize temple*>*Node 2 Configuration*和*Node 3 Configuration*窗口中，输入以下详细信息：
++
+.. 主机名2和3—仅支持由大写字母(A-z)、小写字母(a-z)、数字(0-9 )和连字符(-)特殊字符组成的主机名。如果要配置双堆栈、请指定映射到IPv6地址的主机名。
+.. IP 地址
+.. IPv6地址
+
+
+. 查看*Ready to Complete*(准备完成*)窗口中的详细信息，选择*Complete*(完成*)。
++
+创建部署任务后、vSphere任务栏中将显示进度。
+
+. 完成此任务后、打开虚拟机的电源。
++
+此时将开始安装。您可以在VM的Web控制台中跟踪安装进度。在安装过程中、系统会验证节点配置。系统会验证在OVF表单的Customize模板下的不同部分下提供的输入。如果出现任何差异、则会显示一个对话框、提示您采取更正操作。
+
+. 在对话框提示符中进行必要的更改。使用Tab键在面板中导航，输入您的值*OK*或*Cancel*。
+. 选择*OK*后，将再次验证提供的值。使用适用于VMware的ONTAP工具、您可以尝试三次以更正任何无效值。如果在三次尝试后仍无法更正问题、则产品安装将停止、建议您尝试在全新虚拟机上进行安装。
+. 成功安装后、Web控制台将显示适用于VMware vSphere的ONTAP工具的状态。
+

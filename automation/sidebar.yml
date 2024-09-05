@@ -1,0 +1,34 @@
+---
+section: automation
+title: 使用 REST API 实现自动化
+entries:
+- title: REST API 概述
+  url: "/automation/overview-rest-apis.html"
+- title: 如何访问适用于VMware vSphere REST API的ONTAP工具
+  url: "/automation/how-to-access-rest-api.html"
+- title: 控制 API 请求的输入变量
+  url: "/automation/input-variables-control-an-api-request.html"
+- title: 通过Swagger UI访问适用于VMware vSphere的ONTAP工具API参考文档
+  url: "/automation/how-to-access-rest-api-doc-through-the-swagger-user-interface.html"
+- title: 开始使用 REST API
+  url: "/automation/get-started-with-the-rest-api.html"
+- title: 工作流
+  entries:
+  - title: 存储发现
+    url: "/automation/storage-workflow.html"
+  - title: SVM聚合映射要求
+    url: "/automation/svm-workflow.html"
+  - title: 具有vCenter Server实例的板载存储后端(SVM或集群)
+    url: "/automation/onboard-svm-workflow.html"
+  - title: 创建卷数据存储库
+    url: "/automation/create-vvol-workflow.html"
+  - title: 挂载并卸载一个卷数据存储库
+    url: "/automation/mount-unmount-workflow.html"
+  - title: 扩展或缩减VVOV数据存储库的存储
+    url: "/automation/expand-shrink-workflow.html"
+  - title: 删除卷数据存储库
+    url: "/automation/delete-vvol-workflow.html"
+  - title: 管理存储阈值
+    url: "/automation/manage-threshold-workflow.html"
+  - title: 管理网络访问
+    url: "/automation/manage-network-workflows.html"

@@ -1,0 +1,32 @@
+---
+permalink: automation/svm-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: 要使用SVM用户凭据配置数据存储库、适用于VMware vSphere的ONTAP工具会在数据存储库发布API中指定的聚合上创建卷。 
+---
+= SVM聚合映射要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要使用SVM用户凭据配置数据存储库、适用于VMware vSphere的ONTAP工具会在数据存储库发布API中指定的聚合上创建卷。ONTAP不允许使用SVM用户凭据在SVM上未映射的聚合上创建卷。要解决此问题、请使用ONTAP REST API或命令行界面将SVM映射到聚合、如下所述。
+
+ONTAP REST API：
+
+[listing]
+----
+PATCH "/api/svm/svms/f16f0935-5281-11e8-b94d-005056b46485"
+'{"aggregates":{"name":["aggr1","aggr2","aggr3"]}}'
+----
+ONTAP命令行界面：
+
+[listing]
+----
+sti115_vsim_ucs630f_aggr1 vserver show-aggregates
+AvailableVserver Aggregate State Size Type SnapLock
+Type
+svm_test sti115_vsim_ucs630f_aggr1
+online 10.11GB vmdisk non-snaplock
+----

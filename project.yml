@@ -1,0 +1,25 @@
+---
+settings:
+  name: ONTAP tools for VMware vSphere 10.1
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: zh-cn,us-en,ja-jp,ko-kr,zh-tw,de-de,es-es,fr-fr,it-it
+sidebar:
+  entries:
+  - title: 适用于VMware vSphere 10.1的ONTAP工具文档
+    url: "/index.html"
+  - title: 发行说明
+    url: "/release-notes.html"
+  - section: concepts
+  - section: deploy
+  - section: configure
+  - section: protect
+  - section: manage
+  - section: upgrade
+  - section: migrate
+  - section: automation
+  - title: 法律声明
+    url: "/legal-notices.html"

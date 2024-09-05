@@ -1,0 +1,53 @@
+---
+permalink: automation/delete-vvol-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: 工作流是指完成特定管理任务或目标所需的一个或多个步骤的序列。 
+---
+= 删除卷数据存储库
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+只要 VVOL 数据存储库上至少有一个可用的 FlexVol 卷，此数据存储库就会存在。如果要删除HA集群中的vvol数据存储库、则应先从HA集群中的所有主机卸载该数据存储库、然后使用vCenter Server用户界面手动删除驻留的_.vvSphere - hA_文件夹。
+
+* 步骤 *
+
+请使用以下API删除卷数据存储库。
+
+[listing]
+----
+DELETE
+​/virtualization​/api​/v1​/vcenters​/{vcguid}​/vvols​/datastores​/{moref}
+----
+示例
+
+* 删除虚拟卷数据存储库并从存储中删除卷
+
+
+[listing]
+----
+  DELETE /api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-28?delete_volumes=true
+----
+
+NOTE: 如果您已将delete_volume标志传递为true、则删除虚拟卷数据存储库工作流将删除数据存储库卷、而不管该数据存储库卷是否受管理。
+
+* 删除虚拟卷数据存储库、而不从存储中删除卷
+
+
+[listing]
+----
+  DELETE /api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-28?delete_volumes=false
+----
+响应：
+
+[listing]
+----
+{
+
+    "id": "1889"
+
+}
+----
