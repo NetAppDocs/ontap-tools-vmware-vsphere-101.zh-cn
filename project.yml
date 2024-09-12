@@ -11,8 +11,7 @@ sidebar:
   entries:
   - title: 适用于VMware vSphere 10.1的ONTAP工具文档
     url: "/index.html"
-  - title: 发行说明
-    url: "/release-notes.html"
+  - section: release-notes
   - section: concepts
   - section: deploy
   - section: configure

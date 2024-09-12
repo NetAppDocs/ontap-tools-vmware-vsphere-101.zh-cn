@@ -1,0 +1,96 @@
+---
+permalink: release-notes/whats-new-otv-101.html 
+sidebar: sidebar 
+keywords: 'what"s new, release notes, otv, 10.1' 
+summary: 了解OTV 10.1中提供的新功能。 
+---
+= 适用于VMware vSphere 10.1的ONTAP工具中的新增功能
+:allow-uri-read: 
+
+
+[role="lead"]
+了解适用于VMware vSphere 10.1的ONTAP工具中提供的新功能。
+
+[cols="30%,70%"]
+|===
+| 更新 | 说明 
+
+
+ a| 
+xref:../manage/migrate-standard-virtual-machines-to-vvols-datastores.html[NFS和VMFS数据存储库支持]
+ a| 
+此版本的适用于VMware vSphere的ONTAP工具支持通过VASA Provider以及NFS v3和VMFS数据存储库配置VVO尔 数据存储库。支持创建、调整大小、挂载、卸载和删除等数据存储库操作。您可以使用iSCSI协议配置VMFS数据存储库。作为VMware管理员、您可以将iSCSI VMFS数据存储库从适用于VMware vSphere 9.xx的ONTAP工具无缝部署、升级和过渡到10.1版。支持从适用于VMware vSphere 9.10D2、9.11D2、9.12和9.13版本的ONTAP工具迁移到10.1版本。
+
+
+
+ a| 
+xref:../protect/configure-storage-replication-adapter-for-san-environment.html[适用于NFS和VMFS数据存储库的Storage Replication Adapter (SRA)]
+ a| 
+SRA可实施基于VMware Site Recovery Manager (SRM)规范的灾难恢复(DR)。对于NFS数据存储库、ONTAP卷使用NFS v3协议挂载在ESXi主机上。对于VMFS数据存储库、ONTAP LUN使用iSCSI协议挂载在ESXi主机上。
+
+ONTAP SnapMirror关系可复制目标站点中的卷和LUN。SRA实施从VMware SRM调用的testFailover、故障转移和重新保护命令。作为实施过程的一部分、SRA可确保在发生恢复意外事件时所有卷和LUN均可挂载到目标上、并可读取二级站点卷和LUN、以避免数据差异。
+
+
+
+ a| 
+xref:../configure/dashboard-overview.html[为所有工作流提供丰富的vCenter用户界面(UI)集成支持]
+ a| 
+适用于VMware vSphere 10.1的ONTAP工具为工作流提供了一个图形用户界面、可与适用于VMware vSphere 9.xx版本的ONTAP工具实现同等优势。远程插件支持：
+
+* xref:../manage/migrate-standard-virtual-machines-to-vvols-datastores.html[NFS、VMFS和VMware数据存储库的可观察性和监控]
+* xref:../protect/configure-storage-replication-adapter-for-san-environment.html[适用于NFS和VMFS数据存储库的Storage Replication Adapter]
+* xref:../configure/registration-process.html[注册和取消注册VASA Provider]
+* xref:../configure/install-nfs-vaai-plug-in.html[VAAI插件安装]
+* xref:../manage/collect-the-log-files.html[选定vCenter的日志捆绑包下载]
+
+
+
+
+ a| 
+xref:../deploy/nonha-deployment.html[易于部署的变体支持]
+ a| 
+您可以快速启动适用于VMware vSphere 10.1的ONTAP工具、并使用易于部署的选项体验其功能。基于快照的恢复支持轻松部署。
+
+
+
+ a| 
+xref:../configure/manager-user-interface.html[适用于所有ONTAP工具管理工作流的ONTAP工具管理器用户界面]
+ a| 
+通过ONTAP工具管理器、ONTAP工具管理员可以更好地控制受管vCenter实例和已启用存储后端。ONTAP工具管理器有助于：
+
+* vCenter管理—将vCenter实例添加到适用于VMware vSphere的ONTAP工具并对其进行管理。
+* 存储后端管理—将ONTAP存储集群添加到适用于VMware vSphere的ONTAP工具并进行管理、然后将其全局映射到已启用的vCenter实例。
+* 日志捆绑包下载—收集适用于VMware vSphere的ONTAP工具的日志文件。
+* 证书管理-将自签名证书更改为自定义CA证书、并续订或刷新所有证书。
+* Password management (密码管理)-重置用户的OVA应用程序密码。
+
+
+
+
+ a| 
+xref:../manage/certificate-manage.html[证书管理]
+ a| 
+适用于VMware vSphere的ONTAP工具的一个实例可以管理多个vCenter实例。默认情况下、在部署适用于VMware vSphere的ONTAP工具时、系统会为所有vCenter实例分配自签名证书。如果您要管理多个vCenter实例、并且要在多个vCenter实例上启用vvol功能、则必须使用ONTAP工具管理器界面将自签名证书更改为自定义CA证书。您可以使用同一界面续订或刷新所有证书。
+
+
+
+ a| 
+xref:../concepts/ontap-tools-concepts-terms.html[零恢复点目标(RPO)恢复]
+ a| 
+如果您丢失了适用于VMware vSphere的ONTAP工具设置、则可以使用ONTAP数据管理软件恢复ONTAP工具设置、而不会丢失任何数据。对于简单的部署选项、不支持零RPO恢复。
+
+
+
+ a| 
+iSCSI协议支持部署
+ a| 
+Trident支持使用NFS和iSCSI协议来配置永久性卷。在为VMware vSphere部署ONTAP工具时、您可以使用iSCSI协议将VASA提供程序服务数据存储在永久性卷中。
+
+
+
+ a| 
+为存储和vCenter启用提供IPv6地址支持
+ a| 
+您可以使用IPv4地址、IPv6地址或完全限定域名(FQDN)板载存储后端。存储服务和存储代理服务使用具有相同IPv4或IPv6地址的已启用凭据与ONTAP REST API进行通信。IPv4地址、IPv6地址或使用导出策略规则的FQDN支持数据路径。
+
+|===

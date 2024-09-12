@@ -1610,9 +1610,7 @@
   <block id="8bb83fccb484f1f0daa29d9b57c5cf9a" category="paragraph">应在受保护站点和恢复站点发现状态为"`已启用`"的存储系统。</block>
   <block id="cb0b3fe7df304baf3d39da385a4ec459" category="summary">提供有关适用于 VMware vSphere 的此版本 ONTAP 工具的重要信息，包括新增功能和增强功能，已修复的问题，已知问题，注意事项和限制。</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="doc">发行说明</block>
-  <block id="01de6d9be7e1aa419839bb0c0de0ebde" category="paragraph">提供有关适用于 VMware vSphere 的此版本 ONTAP 工具的重要信息，包括已修复的问题，已知问题，注意事项和限制。</block>
   <block id="d8d47cdd0aa1b9e3260a6ad2bc9598dd" category="inline-link">适用于VMware vSphere 10.1的ONTAP工具发行说明</block>
-  <block id="911c80fcd732f0a19d4f40dbd06d5688" category="paragraph">有关详细信息，请参见<block ref="9ee84a1ff5a886dae6e2983552f808e6" category="inline-link-rx"></block>。</block>
   <block id="ea228e7ce90fb22b7336716e47dc7d35" category="summary">此页面概述了适用于VMware vSphere系统的ONTAP工具升级操作的错误代码。</block>
   <block id="f804f395829e966ca161a8be7756fec4" category="doc">升级错误代码</block>
   <block id="b685a928714b09c857b637a88ebe2239" category="paragraph">在对适用于VMware vSphere的ONTAP工具执行升级操作期间、您可能会遇到错误代码。错误代码的长度为五位数、其中前两位数表示遇到问题描述的脚本、后三位数表示该脚本中的特定工作流。</block>
@@ -1748,4 +1746,81 @@
   <block id="a239701adb72159a71164b036c18a53a" category="sidebar">配置受保护站点和恢复站点资源</block>
   <block id="6956cfc9382ccb41c8ac57f99255b409" category="sidebar">验证复制的存储系统</block>
   <block id="a2fa58344be7fbd9a2be0320a8df0f77" category="sidebar">升级 ONTAP 工具</block>
+  <block id="45c0cb8a573040ec3a3c91b49388ce77" category="summary">了解OTV 9和OTV 10功能比较</block>
+  <block id="bec34363c22ae7f416bb150033204752" category="doc">OTV 9和OTV 10功能比较</block>
+  <block id="9ed4a475dd3705157a9fed8811f63ce2" category="inline-link">NetApp 互操作性表工具</block>
+  <block id="7bbd8ba71af073421f64a911c595d804" category="paragraph">了解从OTV 9迁移到OTV 10.1是否适合您。有关最新的兼容性信息，请参阅<block ref="0aaf04254af18646f3d246cd4a4b417d" category="inline-link-rx"></block>。</block>
+  <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">功能</block>
+  <block id="e2e5efdc8b340ced50733afbe15a4fad" category="cell">ONTAP工具9.13.</block>
+  <block id="ec00f002c530dcfbc3a0e06a58d47937" category="cell">ONTAP工具10.1</block>
+  <block id="ab83860ed087a089d00a21810f2a0bf7" category="cell">关键价值主张</block>
+  <block id="4273cb76acdc3e1de02819d037c77ad4" category="cell">利用增强的安全性、合规性和自动化功能简化零日到二日运营</block>
+  <block id="798f5d4722c6982593d6671eef46371d" category="cell">在扩展高可用性、性能和扩展限制的同时、将ONTAP工具10.x向9.x奇偶校验发展</block>
+  <block id="92d3c85edd0fa69062ef2c7cca594814" category="cell">ONTAP版本资格认定</block>
+  <block id="f69940d2c889c5ba58609514e4ec4bff" category="cell">ONTAP 9．9.1至ONTAP 9．15．1</block>
+  <block id="d4dcb3d0be17e55a6784a2f961f93bc2" category="cell">ONTAP 9．12.1至ONTAP 9．14.1</block>
+  <block id="d67ece44624c7aa69b0f38715d1ac2fb" category="cell">VMware版本支持</block>
+  <block id="e14179d4b312d9cfca14436389327be5" category="cell">vSphere 7.x-8.x SRM 8.5-9.0</block>
+  <block id="bcfc58d0493001a6860f0cd2b68840b3" category="cell">vSphere 7.x-8.x SRM 8.7-9.0</block>
+  <block id="30388d1a3ab1a01f6930553a577eb80b" category="cell">协议支持</block>
+  <block id="d5ff81a2866c816e348cdd6f08ed39e4" category="cell">传统数据存储库：NFS (v3和v4.1)、VMFS (iSCSI和FCP) Vvol：iSCSI、FCP、NVMe/FC、NFS v3</block>
+  <block id="ef79cc3ec55f1ee802c8bef4053dfebe" category="cell">传统数据存储库：NFS (v3和v4.1)、VMFS (iSCSI) Vvol：iSCSI、NFS v3</block>
+  <block id="2d215ebfc0280f8163d071454ec7ce01" category="cell">可扩展性</block>
+  <block id="250a44c4a8c52c86430d21b997042d19" category="cell">主机和VM：300个主机、多达10000个VM数据存储库：600个NFS、多达50个VMFS、多达250个Vvol Vvol：多达14K</block>
+  <block id="e9ecfce2c9d4f4584ac79acfbd1b505a" category="cell">主机和VM：600个主机Vvol：最多140、000个</block>
+  <block id="31fd0c2c8d388a4cd2c6459234743476" category="cell">可观察性</block>
+  <block id="0ae86707597758caa42797b966846966" category="cell">性能、容量和主机合规性信息板动态VM和数据存储库报告</block>
+  <block id="e48d3655de549622076e6823dc5953da" category="cell">更新了性能、容量和主机合规性信息板动态VM和数据存储库报告</block>
+  <block id="7e7397a7b79323762c61941fc0e6b5f9" category="cell">数据保护</block>
+  <block id="efee7a2d070a492110e424ced07a5cb4" category="cell">适用于基于VMFS和NFS FlexVol的复制的SRA复制、用于VVO尔SCV集成并可互操作以进行备份</block>
+  <block id="15449f9a7ac234221e11423d597b85d4" category="cell">iSCSI VMFS和NFS v3数据存储库的SRA复制</block>
+  <block id="705b94fd1b511a1c9c06a21279f92615" category="paragraph">了解适用于VMware vSphere 10.1的ONTAP工具中提供的新增功能和增强功能。</block>
+  <block id="6157debca7d3f3948f1725114e76924b" category="inline-xref-macro">适用于VMware vSphere 10.1的ONTAP工具中的新增功能</block>
+  <block id="8ad73d2923c566307bb64baa5d027f1e" category="paragraph">有关新增功能和增强功能的完整列表，请参见<block ref="ec6dda21da143161509af94ddcaf0c28" category="inline-xref-macro-rx"></block>。</block>
+  <block id="bcc22b06b618a9db830b76770830c578" category="paragraph">要详细了解从适用于VMware vSphere 9的ONTAP工具迁移到ONTAP Tools 10.1是否适合您的部署，请参见<block ref="d850f8a270263c8f340a6395269dd624" category="inline-xref-macro-rx"></block>。支持从适用于VMware vSphere 9.10D2、9.11D2、9.12和9.13版本的ONTAP工具迁移到ONTAP Tools 10.1。</block>
+  <block id="7c9c963f9e315e09a32dfb79b88d92b8" category="paragraph">有关适用于VMware vSphere 10.1的ONTAP工具中已知问题和限制的详细信息，请参见<block ref="82f186bdee145660ad8025b64bc47ede" category="inline-link-rx"></block>。您必须使用NetApp帐户登录或创建帐户才能访问发行说明。</block>
+  <block id="e5af075103bba1e5e194c9d0c74f1e1f" category="summary">了解OTV 10.1中提供的新功能。</block>
+  <block id="246423e206dcb100415831177697c50a" category="doc">适用于VMware vSphere 10.1的ONTAP工具中的新增功能</block>
+  <block id="8531963bc35662f1a07cf43203d718fe" category="paragraph">了解适用于VMware vSphere 10.1的ONTAP工具中提供的新功能。</block>
+  <block id="06933067aafd48425d67bcb01bba5cb6" category="cell">更新</block>
+  <block id="b0c5611cb19744a4ec33c89331b39405" category="inline-xref-macro">NFS和VMFS数据存储库支持</block>
+  <block id="ffb43ddccdfa13d155c9c1caa984356b" category="paragraph"><block ref="ffb43ddccdfa13d155c9c1caa984356b" category="inline-xref-macro-rx"></block></block>
+  <block id="9380ed607d330ba78c881d91902634c3" category="paragraph">此版本的适用于VMware vSphere的ONTAP工具支持通过VASA Provider以及NFS v3和VMFS数据存储库配置VVO尔 数据存储库。支持创建、调整大小、挂载、卸载和删除等数据存储库操作。您可以使用iSCSI协议配置VMFS数据存储库。作为VMware管理员、您可以将iSCSI VMFS数据存储库从适用于VMware vSphere 9.xx的ONTAP工具无缝部署、升级和过渡到10.1版。支持从适用于VMware vSphere 9.10D2、9.11D2、9.12和9.13版本的ONTAP工具迁移到10.1版本。</block>
+  <block id="5203d35baba2192ec7064c99efaaea05" category="inline-xref-macro">适用于NFS和VMFS数据存储库的Storage Replication Adapter (SRA)</block>
+  <block id="0fa426525486e0f9f48704272c02a330" category="paragraph"><block ref="0fa426525486e0f9f48704272c02a330" category="inline-xref-macro-rx"></block></block>
+  <block id="81ec9f1750219d01437ad1704321a8b6" category="paragraph">SRA可实施基于VMware Site Recovery Manager (SRM)规范的灾难恢复(DR)。对于NFS数据存储库、ONTAP卷使用NFS v3协议挂载在ESXi主机上。对于VMFS数据存储库、ONTAP LUN使用iSCSI协议挂载在ESXi主机上。</block>
+  <block id="a64c2654d429de38182dd3f31b429336" category="paragraph">ONTAP SnapMirror关系可复制目标站点中的卷和LUN。SRA实施从VMware SRM调用的testFailover、故障转移和重新保护命令。作为实施过程的一部分、SRA可确保在发生恢复意外事件时所有卷和LUN均可挂载到目标上、并可读取二级站点卷和LUN、以避免数据差异。</block>
+  <block id="0eb6205a84f241d342824039207edada" category="inline-xref-macro">为所有工作流提供丰富的vCenter用户界面(UI)集成支持</block>
+  <block id="00a3ed855b5871be3225514c59444830" category="paragraph"><block ref="00a3ed855b5871be3225514c59444830" category="inline-xref-macro-rx"></block></block>
+  <block id="5502bf0cb7f387ad0f190f3aba86e611" category="paragraph">适用于VMware vSphere 10.1的ONTAP工具为工作流提供了一个图形用户界面、可与适用于VMware vSphere 9.xx版本的ONTAP工具实现同等优势。远程插件支持：</block>
+  <block id="2cd5ab289151bc93d2cd5a851ce5a182" category="inline-xref-macro">NFS、VMFS和VMware数据存储库的可观察性和监控</block>
+  <block id="ba3288b0f3737dfc12d3d0725b45cba7" category="list-text"><block ref="ba3288b0f3737dfc12d3d0725b45cba7" category="inline-xref-macro-rx"></block></block>
+  <block id="ec8e7f7786f83bd5c17e5091593d1bcd" category="inline-xref-macro">适用于NFS和VMFS数据存储库的Storage Replication Adapter</block>
+  <block id="69b01101bcfd3614fddfcea5b74f9dc6" category="list-text"><block ref="69b01101bcfd3614fddfcea5b74f9dc6" category="inline-xref-macro-rx"></block></block>
+  <block id="b9d6ae6135cdf8b344d8f3007a4dd4f7" category="inline-xref-macro">注册和取消注册VASA Provider</block>
+  <block id="d93f7987b79ce491b08574815f61ecd5" category="list-text"><block ref="d93f7987b79ce491b08574815f61ecd5" category="inline-xref-macro-rx"></block></block>
+  <block id="c438af724e00215c2194b4fe908d2fc8" category="inline-xref-macro">VAAI插件安装</block>
+  <block id="97a2fae8ba4b71e8f3339671a87cae43" category="list-text"><block ref="97a2fae8ba4b71e8f3339671a87cae43" category="inline-xref-macro-rx"></block></block>
+  <block id="7be3e89a12c407757f33591ecfa434a2" category="inline-xref-macro">选定vCenter的日志捆绑包下载</block>
+  <block id="1bee80e7af7ea18f1f2303659d9efc2e" category="list-text"><block ref="1bee80e7af7ea18f1f2303659d9efc2e" category="inline-xref-macro-rx"></block></block>
+  <block id="04d09f3970ce5b984517e63432248ff1" category="inline-xref-macro">易于部署的变体支持</block>
+  <block id="5cfcc1ff385f84f24c3dc51547a9b597" category="paragraph"><block ref="5cfcc1ff385f84f24c3dc51547a9b597" category="inline-xref-macro-rx"></block></block>
+  <block id="18387d76e8a1bb4a9d74e1cf14340019" category="paragraph">您可以快速启动适用于VMware vSphere 10.1的ONTAP工具、并使用易于部署的选项体验其功能。基于快照的恢复支持轻松部署。</block>
+  <block id="1680bed1d13930544c4c6cdb3af4487a" category="inline-xref-macro">适用于所有ONTAP工具管理工作流的ONTAP工具管理器用户界面</block>
+  <block id="c629786128a204c47e6369a666c5ea58" category="paragraph"><block ref="c629786128a204c47e6369a666c5ea58" category="inline-xref-macro-rx"></block></block>
+  <block id="8e3b69ccee525c284e6777e83b4a2b3e" category="paragraph">通过ONTAP工具管理器、ONTAP工具管理员可以更好地控制受管vCenter实例和已启用存储后端。ONTAP工具管理器有助于：</block>
+  <block id="a98a4446bda1eb97ecfbeeffcc7c02c0" category="list-text">vCenter管理—将vCenter实例添加到适用于VMware vSphere的ONTAP工具并对其进行管理。</block>
+  <block id="7e4ead51058fcac66ebc38000cd94d4a" category="list-text">存储后端管理—将ONTAP存储集群添加到适用于VMware vSphere的ONTAP工具并进行管理、然后将其全局映射到已启用的vCenter实例。</block>
+  <block id="7fd021fc4df26a773091018947aead5b" category="list-text">证书管理-将自签名证书更改为自定义CA证书、并续订或刷新所有证书。</block>
+  <block id="d7472107bd93164aab58e7bdee6b4ee2" category="inline-xref-macro">证书管理</block>
+  <block id="d88f1919615bd3de82a8342579ba3f3c" category="paragraph"><block ref="d88f1919615bd3de82a8342579ba3f3c" category="inline-xref-macro-rx"></block></block>
+  <block id="247e7e53842997b527984ec99865ecb9" category="paragraph">适用于VMware vSphere的ONTAP工具的一个实例可以管理多个vCenter实例。默认情况下、在部署适用于VMware vSphere的ONTAP工具时、系统会为所有vCenter实例分配自签名证书。如果您要管理多个vCenter实例、并且要在多个vCenter实例上启用vvol功能、则必须使用ONTAP工具管理器界面将自签名证书更改为自定义CA证书。您可以使用同一界面续订或刷新所有证书。</block>
+  <block id="843dba768950bac1522c1c3eab661252" category="inline-xref-macro">零恢复点目标(RPO)恢复</block>
+  <block id="52b85ddfb0b9961826a9834ac13a4114" category="paragraph"><block ref="52b85ddfb0b9961826a9834ac13a4114" category="inline-xref-macro-rx"></block></block>
+  <block id="ff2c82a591bded461a17d279e2c944f8" category="paragraph">如果您丢失了适用于VMware vSphere的ONTAP工具设置、则可以使用ONTAP数据管理软件恢复ONTAP工具设置、而不会丢失任何数据。对于简单的部署选项、不支持零RPO恢复。</block>
+  <block id="cadf71509a63142c48455fccc9e9d865" category="paragraph">iSCSI协议支持部署</block>
+  <block id="ee9ea56aafa616d28cd5dfdd999e115b" category="paragraph">Trident支持使用NFS和iSCSI协议来配置永久性卷。在为VMware vSphere部署ONTAP工具时、您可以使用iSCSI协议将VASA提供程序服务数据存储在永久性卷中。</block>
+  <block id="3e68f004e881d64eee5503230989baef" category="paragraph">为存储和vCenter启用提供IPv6地址支持</block>
+  <block id="21a0626546cb66a4a2685b4121ca68a2" category="paragraph">您可以使用IPv4地址、IPv6地址或完全限定域名(FQDN)板载存储后端。存储服务和存储代理服务使用具有相同IPv4或IPv6地址的已启用凭据与ONTAP REST API进行通信。IPv4地址、IPv6地址或使用导出策略规则的FQDN支持数据路径。</block>
+  <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">发行说明</block>
 </blocks>

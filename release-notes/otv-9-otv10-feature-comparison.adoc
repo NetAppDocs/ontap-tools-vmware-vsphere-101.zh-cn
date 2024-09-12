@@ -1,0 +1,40 @@
+---
+permalink: release-notes/otv-9-otv10-feature-comparison.html 
+sidebar: sidebar 
+keywords: release notes, feature, comparison 
+summary: 了解OTV 9和OTV 10功能比较 
+---
+= OTV 9和OTV 10功能比较
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解从OTV 9迁移到OTV 10.1是否适合您。有关最新的兼容性信息，请参阅 https://mysupport.netapp.com/matrix["NetApp 互操作性表工具"^]。
+
+[cols="20%,40%,40%"]
+|===
+| 功能 | ONTAP工具9.13. | ONTAP工具10.1 
+
+
+| 关键价值主张 | 利用增强的安全性、合规性和自动化功能简化零日到二日运营 | 在扩展高可用性、性能和扩展限制的同时、将ONTAP工具10.x向9.x奇偶校验发展 
+
+
+| ONTAP版本资格认定 | ONTAP 9．9.1至ONTAP 9．15．1 | ONTAP 9．12.1至ONTAP 9．14.1 
+
+
+| VMware版本支持 | vSphere 7.x-8.x SRM 8.5-9.0 | vSphere 7.x-8.x SRM 8.7-9.0 
+
+
+| 协议支持 | 传统数据存储库：NFS (v3和v4.1)、VMFS (iSCSI和FCP) Vvol：iSCSI、FCP、NVMe/FC、NFS v3 | 传统数据存储库：NFS (v3和v4.1)、VMFS (iSCSI) Vvol：iSCSI、NFS v3 
+
+
+| 可扩展性 | 主机和VM：300个主机、多达10000个VM数据存储库：600个NFS、多达50个VMFS、多达250个Vvol Vvol：多达14K | 主机和VM：600个主机Vvol：最多140、000个 
+
+
+| 可观察性 | 性能、容量和主机合规性信息板动态VM和数据存储库报告 | 更新了性能、容量和主机合规性信息板动态VM和数据存储库报告 
+
+
+| 数据保护 | 适用于基于VMFS和NFS FlexVol的复制的SRA复制、用于VVO尔SCV集成并可互操作以进行备份 | iSCSI VMFS和NFS v3数据存储库的SRA复制 
+|===
