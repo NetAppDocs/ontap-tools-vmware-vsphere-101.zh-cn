@@ -1,17 +1,17 @@
 ---
-permalink: release-notes/otv-9-otv10-feature-comparison.html 
+permalink: release-notes/ontap-tools-9-ontap-tools-10-feature-comparison.html 
 sidebar: sidebar 
 keywords: release notes, feature, comparison 
-summary: 了解OTV 9和OTV 10功能比较 
+summary: 了解适用于VMware vSphere 9的ONTAP工具与适用于VMware vSphere 10的ONTAP工具的功能比较 
 ---
-= OTV 9和OTV 10功能比较
+= 适用于VMware vSphere 9的ONTAP工具与适用于VMware vSphere 10的ONTAP工具的功能比较
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-了解从OTV 9迁移到OTV 10.1是否适合您。有关最新的兼容性信息，请参阅 https://mysupport.netapp.com/matrix["NetApp 互操作性表工具"^]。
+了解从适用于VMware vSphere 9的ONTAP工具迁移到适用于VMware vSphere 10.1的ONTAP工具是否适合您。有关最新的兼容性信息，请参阅 https://mysupport.netapp.com/matrix["NetApp 互操作性表工具"^]。
 
 [cols="20%,40%,40%"]
 |===
@@ -24,10 +24,10 @@ summary: 了解OTV 9和OTV 10功能比较
 | ONTAP版本资格认定 | ONTAP 9．9.1至ONTAP 9．15．1 | ONTAP 9．12.1至ONTAP 9．14.1 
 
 
-| VMware版本支持 | vSphere 7.x-8.x SRM 8.5-9.0 | vSphere 7.x-8.x SRM 8.7-9.0 
+| VMware版本支持 | vSphere 7.x-8.x VMware Site Recovery Manager (SRM) 8.5到VMware Live Site Recovery 9.0 | vSphere 7.x-8.x VMware Site Recovery Manager (SRM) 8.7到VMware Live Site Recovery 9.0 
 
 
-| 协议支持 | 传统数据存储库：NFS (v3和v4.1)、VMFS (iSCSI和FCP) Vvol：iSCSI、FCP、NVMe/FC、NFS v3 | 传统数据存储库：NFS (v3和v4.1)、VMFS (iSCSI) Vvol：iSCSI、NFS v3 
+| 协议支持 | NFS和VMFS数据存储库：NFS (v3和v4.1)、VMFS (iSCSI和FCP) Vvol数据存储库：iSCSI、FCP、NVMe/FC、NFS v3 | NFS和VMFS数据存储库：NFS (v3和v4.1)、VMFS (iSCSI) Vvol数据存储库：iSCSI、NFS v3 
 
 
 | 可扩展性 | 主机和VM：300个主机、多达10000个VM数据存储库：600个NFS、多达50个VMFS、多达250个Vvol Vvol：多达14K | 主机和VM：600个主机Vvol：最多140、000个 
