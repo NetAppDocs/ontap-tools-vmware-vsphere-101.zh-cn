@@ -1823,4 +1823,6 @@
   <block id="8bc8491da19ddf762b07de3144d61829" category="cell">NFS和VMFS数据存储库：NFS (v3和v4.1)、VMFS (iSCSI) Vvol数据存储库：iSCSI、NFS v3</block>
   <block id="9f309a586570bbc1fff689704b3dad01" category="paragraph">要详细了解从适用于VMware vSphere 9的ONTAP工具迁移到ONTAP Tools 10.1是否适合您的部署，请参见<block ref="947428ca1064f8d19137fb8976698998" category="inline-xref-macro-rx"></block>。支持从适用于VMware vSphere 9.10D2、9.11D2、9.12和9.13版本的ONTAP工具迁移到ONTAP Tools 10.1。</block>
   <block id="ed8359854c43609fca7bc8a46cca9eac" category="sidebar">ONTAP工具9和ONTAP工具10功能比较</block>
+  <block id="f6e2644fce556a8207829c90c0760e9e" category="inline-link">非HA高级配置和HA配置的前提条件</block>
+  <block id="1194197b73e30573b06eeec54d3ca76d" category="list-text">在非HA高级和HA配置中安装适用于VMware vSphere 10.1的ONTAP工具之前，请查看知识库文章：<block ref="e4dee65de4069a83bb14c7c7d5ee3ead" category="inline-link-rx"></block>。</block>
 </blocks>

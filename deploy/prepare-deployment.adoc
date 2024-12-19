@@ -52,4 +52,5 @@ summary: 要使用此设备、您应在环境中部署适用于VMware vSphere的
 .. IPv6网关(可选)
 
 
+. 在非HA高级和HA配置中安装适用于VMware vSphere 10.1的ONTAP工具之前，请查看知识库文章： https://kb.netapp.com/on-prem/ontap/da/NAS/NAS-KBs/pre-requisites_for_installing_OTV_10.1_and_10.2_in_NonHA_Advanced_and_HA["非HA高级配置和HA配置的前提条件"]。
 
