@@ -1,6 +1,6 @@
 ---
 indexpage:
-  title: 适用于VMware vSphere的ONTAP工具文档
+  title: 适用于VMware vSphere 10.1的ONTAP工具文档
   lead: 通过适用于 VMware vSphere 的 ONTAP 工具，您可以在 vCenter Server 环境中配置，管理和保护虚拟数据存储库。
   tiles:
   - title: 开始使用
