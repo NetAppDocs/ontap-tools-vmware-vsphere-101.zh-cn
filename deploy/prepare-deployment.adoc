@@ -15,6 +15,7 @@ summary: 要使用此设备、您应在环境中部署适用于VMware vSphere的
 
 
 
+[[preparing-for-deployment]]
 == 准备部署
 
 以下是在继续部署之前适用于VMware vSphere的ONTAP工具的要求：

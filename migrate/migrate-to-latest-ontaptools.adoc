@@ -25,6 +25,7 @@ NOTE: 作为现有用户、在升级到修补程序版本之前、您需要从�
 
 
 
+[[common-migration-steps]]
 == 常见迁移步骤
 
 . 部署适用于VMware vSphere 10.1版的适用于ONTAP的OVA工具。
@@ -35,6 +36,7 @@ NOTE: 作为现有用户、在升级到修补程序版本之前、您需要从�
 
 
 
+[[sra-migration-steps]]
 == SRA迁移步骤
 
 * 开始之前 *
@@ -61,6 +63,7 @@ NOTE: 如果故障转移刚刚完成且重新保护处于待定状态、请勿�
 
 
 
+[[vasa-provider-migration-steps]]
 == VASA提供程序迁移步骤
 
 . 在适用于VMware vSphere的现有ONTAP工具上启用Derby端口1527。要启用此端口、请使用root用户登录到命令行界面并运行以下命令：

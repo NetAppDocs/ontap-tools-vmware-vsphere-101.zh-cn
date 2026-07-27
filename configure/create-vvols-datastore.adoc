@@ -17,6 +17,7 @@ summary: 您可以使用新卷或现有卷创建卷数据存储库。此外、�
 
 
 
+[[create-a-vvols-datastore]]
 == 创建一个卷数据存储库
 
 您可以使用新卷或现有卷创建一个卷数据存储库。您不能混合使用现有卷和新卷来创建卷数据存储库。
@@ -45,6 +46,7 @@ NOTE: 检查以确保根聚合未映射到SVM。
 
 
 
+[[create-an-nfs-datastore]]
 == 创建NFS数据存储库
 
 VMware网络文件系统(NFS)数据存储库使用NFS协议通过网络将ESXi主机连接到共享存储设备。NFS数据存储库通常用于VMware vSphere环境、并具有多种优势、例如精简性和灵活性。
@@ -72,6 +74,7 @@ NOTE: 只有在选择了NFS 4.1协议时、才能使用Kerberos身份验证。
 
 
 
+[[create-a-vmfs-datastore]]
 == 创建VMFS数据存储库
 
 虚拟机文件系统(Virtual Machine File System、VMFS)是一种专门为在VMware vSphere环境中存储虚拟机文件而设计的集群模式文件系统。它允许多个ESXi主机同时访问相同的虚拟机文件、从而实现vMotion和高可用性等功能。

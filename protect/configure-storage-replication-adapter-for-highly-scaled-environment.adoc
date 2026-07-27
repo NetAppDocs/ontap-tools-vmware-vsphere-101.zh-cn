@@ -15,6 +15,7 @@ summary: '您应按照建议的设置配置存储超时时间间隔、以使Stor
 
 
 
+[[storage-provider-settings]]
 == 存储提供程序设置
 
 您应在 SRM 上为扩展环境设置以下超时值：
@@ -60,6 +61,7 @@ https://docs.vmware.com/en/Site-Recovery-Manager/8.7/com.vmware.srm.admin.doc/GU
 
 
 
+[[storage-settings]]
 == 存储设置
 
 当您遇到超时时时、请将 `storage.commandTimeout`和的值增加 `storage.maxConcurrentCommandCnt`到更高的值。

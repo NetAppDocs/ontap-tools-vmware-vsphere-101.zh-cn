@@ -15,6 +15,7 @@ summary: 适用于VMware vSphere的ONTAP工具的配置选项卡下的ONTAP存�
 
 
 
+[[ontap-storage-views-for-nfs-datastores]]
 == NFS数据存储库的ONTAP存储视图
 
 .步骤
@@ -30,6 +31,7 @@ summary: 适用于VMware vSphere的ONTAP工具的配置选项卡下的ONTAP存�
 
 
 
+[[ontap-storage-views-for-vmfs-datastores]]
 == VMFS数据存储库的ONTAP存储视图
 
 .步骤
@@ -45,6 +47,7 @@ summary: 适用于VMware vSphere的ONTAP工具的配置选项卡下的ONTAP存�
 
 
 
+[[ontap-storage-views-for-vvols-datastores]]
 == 适用于ONTAP数据存储库的VMware存储视图
 
 .步骤

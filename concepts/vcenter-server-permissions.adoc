@@ -36,6 +36,7 @@ image:../media/permission-updated-graphic.gif["权限组件插图"]
 
 
 
+[[privileges]]
 == Privileges
 
 适用于 VMware vSphere 的 ONTAP 工具具有两种特权：
@@ -59,12 +60,14 @@ NOTE: 为了简化vCenter Server RBAC的使用、适用于VMware vSphere的ONTAP
 
 
 
+[[vsphere-objects]]
 == vSphere 对象
 
 权限与 vSphere 对象关联，例如 vCenter Server ， ESXi 主机，虚拟机，数据存储库，数据中心， 和文件夹。您可以为任何 vSphere 对象分配权限。根据分配给 vSphere 对象的权限， vCenter Server 可确定谁可以对该对象执行哪些任务。对于适用于VMware vSphere的ONTAP工具的特定任务、只会在根文件夹级别(vCenter Server)分配和验证权限、而不会在任何其他实体上分配和验证权限。但VAAI插件操作除外、在该插件操作中、系统会对相关ESXi主机验证权限。
 
 
 
+[[users-and-groups]]
 == 用户和组
 
 您可以使用 Active Directory （或本地 vCenter Server 计算机）设置用户和用户组。然后、您可以使用vCenter Server权限为这些用户或组授予访问权限、使其能够对VMware vSphere任务执行特定的ONTAP工具。

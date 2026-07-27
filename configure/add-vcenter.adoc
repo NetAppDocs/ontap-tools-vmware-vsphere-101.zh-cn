@@ -15,6 +15,7 @@ vCenter Server提供了一个中央管理平台、可用于控制主机、虚拟
 
 
 
+[[add-a-vcenter-server-instance]]
 == 添加vCenter Server实例
 
 * 关于此任务 *
@@ -38,6 +39,7 @@ vCenter Server提供了一个中央管理平台、可用于控制主机、虚拟
 
 
 
+[[register-ontap-tools-for-vmware-vsphere-plug-in-with-vcenter-server-instance]]
 == 向vCenter Server实例注册适用于VMware vSphere插件的ONTAP工具
 
 添加vCenter Server实例时、适用于VMware vSphere插件的ONTAP工具会自动作为远程插件注册到vCenter Server。此插件可通过vSphere用户界面快捷方式查看。
@@ -46,6 +48,7 @@ vCenter Server提供了一个中央管理平台、可用于控制主机、虚拟
 
 
 
+[[unregister-ontap-tools-for-vmware-vsphere-plug-in]]
 == 取消注册适用于VMware vSphere插件的ONTAP工具
 
 您可以按照以下步骤从vCenter Server实例中取消注册适用于VMware vSphere插件的ONTAP工具。

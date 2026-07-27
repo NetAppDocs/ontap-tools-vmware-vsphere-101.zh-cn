@@ -15,6 +15,7 @@ vCenter Server是一种中央管理平台、可用于控制主机、虚拟机和
 
 
 
+[[associate-or-dissociate-storage-backends-with-vcenter-server-instance]]
 == 将存储后端与vCenter Server实例关联或解除关联
 
 vCenter Server列表页面会显示相关的存储后端数量。每个vCenter Server实例都可以选择关联或解除存储后端关联。此任务可帮助您全局创建存储后端与已登录vCenter Server实例之间的映射。
@@ -30,6 +31,7 @@ vCenter Server列表页面会显示相关的存储后端数量。每个vCenter S
 
 
 
+[[modify-vcenter-server-instance]]
 == 修改vCenter Server实例
 
 按照以下步骤修改vCenter Server实例。
@@ -43,6 +45,7 @@ vCenter Server列表页面会显示相关的存储后端数量。每个vCenter S
 
 
 
+[[remove-vcenter-server-instance]]
 == 删除vCenter Server实例
 
 您需要先删除连接到vCenter Server的所有存储后端、然后再将其删除。

@@ -15,6 +15,7 @@ summary: '在为Site Recovery Manager \(SRM\)运行Storage Replication Adapter \
 
 
 
+[[configure-sra-for-san-environments]]
 == 为SAN环境配置SRA
 
 * 您需要的内容 *
@@ -46,6 +47,7 @@ https://docs.vmware.com/en/Site-Recovery-Manager/index.html["VMware Site Recover
 
 
 
+[[configure-sra-for-nas-environments]]
 == 为NAS环境配置SRA
 
 * 您需要的内容 *

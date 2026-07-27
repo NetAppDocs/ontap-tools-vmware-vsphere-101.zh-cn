@@ -42,6 +42,7 @@ link:../deploy/config-limits.html["部署适用于VMware vSphere的ONTAP工具�
 
 
 
+[[minimum-storage-and-application-requirements]]
 == 最低存储和应用程序要求
 
 |===
@@ -68,24 +69,28 @@ https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src
 
 
 
+[[additional-deployment-considerations]]
 == 其他部署注意事项
 
 在自定义ONTAP工具的部署时、您应考虑一些要求。
 
 
 
+[[application-user-password]]
 === 应用程序用户密码
 
 这是分配给管理员帐户的密码。出于安全原因、建议密码长度为8到30个字符、并且至少包含一个大写、一个小写、一个数字和一个特殊字符。
 
 
 
+[[appliance-maintenance-console-credentials]]
 === 设备维护控制台凭据
 
 您应使用`maint`用户名访问维护控制台。您可以在部署期间为 " `m熟悉` " 用户设置密码。您可以使用vCenter Server中VM重新启动期间提供的重新启动子操作系统选项来更改密码。
 
 
 
+[[appliance-network-properties]]
 === 设备网络属性
 
 为适用于VMware vSphere的ONTAP工具指定有效的DNS主机名(非限定)和静态IP地址以及其他网络参数。提供的IP地址应可从部署期间选择的VLAN网络进行访问。适用于VMware vSphere 10.1版的ONTAP工具不支持DHCP。所有这些参数都是正确安装和操作所必需的。

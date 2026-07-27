@@ -17,6 +17,7 @@ summary: 您可以使用适用于 VMware vSphere 的 ONTAP 工具在 ESXi 主机
 
 
 
+[[hbacna-adapter-settings]]
 == HBA/CNA适配器设置
 
 为NetApp存储系统设置建议的HBA超时设置。
@@ -41,6 +42,7 @@ summary: 您可以使用适用于 VMware vSphere 的 ONTAP 工具在 ESXi 主机
 
 
 
+[[mpio-settings]]
 == MPIO设置
 
 MPIO设置定义NetApp存储系统的首选路径。MPIO设置可确定哪些可用路径已进行优化(与遍历互连缆线的非优化路径不同)、并将首选路径设置为其中一个路径。
@@ -49,6 +51,7 @@ MPIO设置定义NetApp存储系统的首选路径。MPIO设置可确定哪些可
 
 
 
+[[nfs-settings]]
 == NFS 设置
 
 * * 网络 .TcpipHeapSize*

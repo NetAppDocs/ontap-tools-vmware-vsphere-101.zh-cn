@@ -15,6 +15,7 @@ summary: 在使用 vCenter Server 权限时，需要牢记几个要点。适用�
 
 
 
+[[assigning-permissions]]
 == 分配权限
 
 只有在希望限制对 vSphere 对象和任务的访问时，才需要设置 vCenter Server 权限。否则，您可以以管理员身份登录。通过此登录，您可以自动访问所有 vSphere 对象。
@@ -30,6 +31,7 @@ TIP: 除非贵公司的安全策略要求限制性更强的权限，否则最好
 
 
 
+[[permissions-and-non-vsphere-objects]]
 == 权限和非 vSphere 对象
 
 您创建的权限将应用于非vSphere对象。例如，存储系统不是 vSphere 对象。如果您拥有对存储系统执行适用场景的权限、则应将包含此权限的权限分配给适用于VMware vSphere的ONTAP工具根对象、因为没有可分配此权限的vSphere对象。
@@ -38,6 +40,7 @@ TIP: 除非贵公司的安全策略要求限制性更强的权限，否则最好
 
 
 
+[[modifying-permissions]]
 == 修改权限
 
 您可以随时修改一个权限。

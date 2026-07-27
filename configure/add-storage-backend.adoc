@@ -22,6 +22,7 @@ NOTE: 使用vSphere客户端UI添加存储后端时、Vvol数据存储库不支�
 
 
 
+[[add-storage-backend-using-ontap-tools-manager]]
 == 使用ONTAP工具管理器添加存储后端
 
 
@@ -42,6 +43,7 @@ NOTE: 支持IPv4和IPv6管理生命周期。此外、还支持使用管理SVM基
 
 
 
+[[add-storage-backend-using-vsphere-client-ui]]
 == 使用vSphere客户端UI添加存储后端：
 
 . 使用登录到vSphere Client `\https://vcenterip/ui`

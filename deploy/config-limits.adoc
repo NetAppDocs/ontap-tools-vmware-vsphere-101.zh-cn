@@ -37,6 +37,7 @@ summary: 部署适用于VMware vSphere的ONTAP工具的配置限制
 
 
 
+[[ontap-tools-for-vmware-vsphere-storage-replication-adapter-sra]]
 == 适用于VMware vSphere的ONTAP工具—Storage Replication Adapter (SRA)
 
 下表显示了使用适用于VMware vSphere的ONTAP工具时每个SRM实例支持的数量。

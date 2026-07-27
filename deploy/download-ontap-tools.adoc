@@ -17,6 +17,7 @@ summary: 您可以从 NetApp 支持站点下载适用于 VMware vSphere 的 ONTA
 
 
 
+[[content-library]]
 == 内容库
 
 VMware中的内容库是一个容器对象、用于存储VM模板、vapp模板和其他类型的文件。使用内容库进行部署可为您提供无缝体验、因为它不依赖于网络连接。
